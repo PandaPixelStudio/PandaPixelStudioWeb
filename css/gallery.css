@@ -1,0 +1,72 @@
+.gallery {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 16px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Indicates the image is clickable */
+    transition: transform 0.5s ease; /* Adds a zoom effect on hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle; /* Removes the bottom space under the image */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Adds a zoom effect on hover */
+}
+
+.close-fullscreen,
+.close-lightbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 80vh;
+    margin: auto;
+}
+
+.close-lightbox {
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    z-index: 1001; /* Ensures it's above the lightbox image */
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: #bbb;
+    text-decoration: none;
+}

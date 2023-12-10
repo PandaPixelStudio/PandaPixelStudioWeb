@@ -1,0 +1,148 @@
+#stickyHeader {
+    background-color: #333; /* Example background color */
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Higher than the z-index for other elements to stay on top */
+    width: 100%;
+    /* Add any other styling for your header here */
+}
+
+body, h1, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font */
+}
+
+/* Remove any default margin and padding from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This ensures padding does not affect the total width of elements */
+}
+
+/* Ensure nav element has no margin that could cause a gap */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    margin: 0; /* Override any default margin */
+}
+
+/* Header image styling */
+.header-image {
+    width: 100%;
+    display: block; /* Ensures the div takes up the full width */
+    margin-top: 0px; /* Ensure there is no top margin */
+}
+
+.header-image img {
+    width: 100%;
+    height: 500px; /* Fixed height, or use padding-top for responsive aspect ratio */
+    display: block; /* Ensures there's no space around the image */
+}
+
+.logo {
+    display: flex; /* Aligns the logo image and text side by side */
+    align-items: center; /* Centers them vertically */
+    gap: 10px; /* Puts some space between the image and the text */
+}
+
+.logo img {
+    height: 75px; /* Adjust as needed */
+    width: auto; /* Maintains aspect ratio */
+}
+
+.logo span {
+    font-size: 24px; /* Adjust the size as needed */
+    color: white; /* Change color if needed to make it visible against the background */
+    font-weight: bold; /* Optional: makes the text bolder */
+}
+
+
+ul {
+    display: flex;
+}
+
+li {
+    padding: 0 15px;
+}
+
+li a {
+    color: white;
+    font-size: 16px;
+}
+
+/* Add a transition effect for the background color */
+header.sticky {
+    background-color: #222;
+    transition: background-color 0.3s;
+}
+
+.about-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.section-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between the sections */
+}
+
+.section {
+    flex: 0 1 20%; /* Adjust the flex-basis as necessary to set the initial width */
+    margin: 15px;
+    text-align: center;
+    background-color: #fff; /* Change this to a color that contrasts with your text color */
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for depth */
+}
+
+.section img {
+    width: 90%;
+    height: 300px;
+    border-radius: 50%; /* Creates a circular image */
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    color: #333; /* Set the color to something visible against the background */
+    margin: 10px 0;
+}
+
+.section p {
+    font-family: 'Roboto', sans-serif; /* Consistent font */
+    color: #333; /* Set the color to something visible against the background */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 960px) {
+    .section {
+        flex-basis: 100%;
+    }
+}
+
+.circle-image {
+    width: 300px; /* Width of the circle */
+    height: 300px; /* Height of the circle, should be the same as width for a perfect circle */
+    border-radius: 50%; /* This creates the circular shape */
+    overflow: hidden; /* Ensures no part of the image spills outside the circular shape */
+    position: relative; /* Allows absolute positioning within this container if needed */
+    display: flex; /* Ensures the image inside is centered */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.circle-image img {
+    width: 100%; /* Will cover the width of the container */
+    height: 100%; /* Will cover the height of the container */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+}
